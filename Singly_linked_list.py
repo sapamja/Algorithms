@@ -49,6 +49,8 @@ class LinkedList:
 			n = n.get_next()
 		return outstr
 
+	def isEmpty(self):
+		return self.head == None
 
 	def insert_end(self,data):
 		# create new node for the data
@@ -95,16 +97,18 @@ class LinkedList:
 
 
 	def search(self,x):
-		# return fisrt node with the searched value
-		n = self.head
-		for i in range(self.length):
-			if n.get_data() == x:
-				return i+1
-				break
-			n = n.get_next()
-
-		if i == self.length-1:
+		# return pointer to first node with the searched value
+		if self.isEmpty():
 			return None
+		else:	
+			item = self.head
+			i = 0
+			while item != None:
+				if item.get_data() == x:
+					return i
+				item = item.get_next()
+				i += 1
+			return None	
 
 	def remove_after(self,node):
 		# remember to update tail if removed tail
@@ -138,37 +142,45 @@ class LinkedList:
 				prev_prev_node = self.get_previous(prev_node)
 				prev_prev_node.set_next(node)
 
+	# Find m-th element from the end of list
+	# Do not use the internal slength counter!
+	def find_m_from_end(self,m):
+		if m < 0:
+			print "m should be larger or equal than 0"
+			return None
+		if self.isEmpty():
+			print "List is empty"
+			return None
+		else:
+			p1 = self.head
+			p2 = self.head
+			i = 0
+			while p1 != self.tail:
+				p1 = p1.get_next()
+				i += 1
+				if i > m:
+					p2 = p2.get_next()
+			if i <= m:
+				print "Element", m,"from end does not exist "
+				return None
+			else:
+				return p2.get_data()
+
+
 
 # Add iterator over the list!
-
-
 a = LinkedList()
-a.insert_end(5)
-b = a.tail
-a.insert_end(6)
-a.insert_beginning(8)
-a.insert_end(1)
-c = a.tail
-a.insert_beginning(9)
-a.insert(b,13)
-print a
-a.remove_after(c)
-print a
-print "tail ",a.tail.get_data()
-print "node before 1 is ",a.get_previous(a.get_previous(a.tail)).get_data()
-print "----"
-print a
-b = a.tail
-c = a.get_previous(b)
-a.remove_before(c)
-print a
-print a.length
-
-
-# 
-
-#print a.search(8)
-#a.traverse()
+a.insert_beginning(0)
+a.insert_beginning(10)
+a.insert_beginning(20)
+a.insert_beginning(30)
+a.insert_beginning(40)
+a.insert_beginning(50)
+a.insert_beginning(60)
+a.insert_beginning(70)
+a.insert_beginning(80)
+a.insert_beginning(90)
+print a.find_m_from_end(10)
 
 
 
