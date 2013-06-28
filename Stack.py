@@ -50,12 +50,16 @@ class Stack:
 		self.head = None
 
 	def isEmpty(self):
+		# Check if stack is empty
 		return self.head == None
 
 	def __str__(self):
+		# If stack is empty, nothing to print
 		if self.isEmpty():
 			return "Stack is empty"
 		else:
+			# Not empty, print one by one untill the end
+			# Follow next pointers
 			out = ""
 			i = self.head
 			while i != None:
@@ -64,15 +68,23 @@ class Stack:
 			return out 	
 
 	def push(self,value):
+		# Add new element at the head of stack
 		new_item = Item(value)
+		# If stack is not empty, ned to assign first next value to 
+		# new item
 		if not self.isEmpty():
 			new_item.set_next(self.head)
-		
+		# Then set the head to new item
 		self.head = new_item
 
 	def pop(self):
+		# remove first item at the head
+		# If empty, nothing to remove
 		if self.isEmpty():
 			return None
+		# If not empty, need to keep pointer to current head
+		# Then assign head to second element
+		# return the value from old head	
 		else:
 			tmp_head = self.head
 			self.head = self.head.get_next()
