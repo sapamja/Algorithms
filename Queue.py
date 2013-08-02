@@ -145,32 +145,33 @@ class lQueue:
 			return keep_item.get_value()
 
 
+if __name__ == "__main__":
 
-# ---- tests ----
-b = Queue()
-b.enq(1)
-b.enq(4)
-b.enq(5)
-print b
+	# ---- tests ----
+	b = Queue()
+	b.enq(1)
+	b.enq(4)
+	b.enq(5)
+	print b
 
 
-a = lQueue(4)
-a.enq(1)
-print a," size= ",a.size
-a.enq(2)
-print a," size= ",a.size
-a.enq(4)
-print a," size= ",a.size
-a.enq(6)
-print a," size= ",a.size
-a.enq(9)
-print a," size= ",a.size
-c = a.deq()
-print a," size= ",a.size
-print c
-c = a.deq()
-print a," size= ",a.size
-print c
+	a = lQueue(4)
+	a.enq(1)
+	print a," size= ",a.size
+	a.enq(2)
+	print a," size= ",a.size
+	a.enq(4)
+	print a," size= ",a.size
+	a.enq(6)
+	print a," size= ",a.size
+	a.enq(9)
+	print a," size= ",a.size
+	c = a.deq()
+	print a," size= ",a.size
+	print c
+	c = a.deq()
+	print a," size= ",a.size
+	print c
 
 
 
