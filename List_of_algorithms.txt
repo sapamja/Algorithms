@@ -1,0 +1,131 @@
+Instruction
+* Ask clarification questions
+* Make a drawing
+* Explain algorithm
+* Calculate its efficiency
+* Code
+
+
+Array/Lists
+* Python lists http://effbot.org/zone/python-list.htm
+* Read about arrays vs. lists in python 
+* Insert in given position
+* Delete at given position
+* Combine two sorted lists
+
+
+Linked list
+* Singly linked list
+* Doubly linked list
+* Sorted linked list
+* Add element (beginning, end)
+* Remove element (this one, after, before)
+* Search
+* List flattening (????)
+
+
+Queue
+* Add element to queue - enqueue
+* Get element from queue - dequeue
+* Change for queue with limited space
+
+Stack
+* Add element to stack - push
+* Remove element from stack - pop
+* Change for stack with limited space
+
+Binary search tree
+* Add nodes
+* Remove nodes
+* Traversals - inorder, preorder, postorder
+* Traversals without recursion
+* Search
+* Find max, min
+* Find parent
+* Height of a tree
+* Lowest common ancestor
+* Unbal anced binary search tree ????
+
+Heap
+* As tree
+* As array
+* Add nodes
+* Remove nodes
+* Breadth first search
+* Depth first search (???)
+* Traversal
+
+Graphs
+* As adjacency list
+* As adjacency matrix
+* Diameter of graph
+* Copy graph
+
+
+Strings
+* Reverse order of the entire string
+* Reverse order of words in sentence (words are not reversed)
+* Reverse each word separately but the sentence stays
+* Convert str - integer and oposite
+* Remove characters from sentence
+* Find first nonrepeated character in sentence
+* Search for a string in another string and return index where it is
+* Convert the relative path into absolute path
+* Largest block of repeated characters
+* Are two strings anagrams (same letters different order)
+* String permutation (solved in Recursion.py)
+* Translate phone number into words (p.119)
+
+Recursion
+* Binary search on sorted array
+* String permutation
+* String combinations
+* Some other algorithms from tree section (traversals, search)
+* Fibonacci series
+
+Sorting:
+* Discuss efficiency of sorting algorithms and best application
+* What is the best sorting algorithm?
+* Selection sort
+* Insertion sort
+* Quick sort in place and not 
+* Merge sort
+* Counting sort
+* Radix sort
+* Discus sort together k sorted arrays p. 132
+* You have k sorted arrays and one empty output array, combine the data without using additional data structure
+* Multi key sort
+* Two sorted x and x+y, sort in y
+* Pancake sort
+
+
+Hash maps
+* What is a hash table, and when would you use one?
+* Why might you prefer using a hash to using an unsorted array, or a sorted array? What trade-offs are you making when you choose between a hash and a sorted array?
+* Implement a hash table
+* Explain what is sparse dictionary
+
+
+Other algorithms
+* Power - recursive
+* Power - nonrecursive
+* fizzbuzz
+* Derivative of a polynomial
+* Write first 100 prime numbers
+* Use basic operations to calculate square root
+* Given n intervals (xi,yi), find maximum number of overlapping intervals
+* Given a set of n jobs with [start time, end time, cost] find a subset so that no 2 jobs overlap and the cost is maximum - dynamic programming
+* You are given a string with each English character translated to its alphabetical position (e.g., the string "ABC" --> "123"). Provide a function that, when provided the string as an argument, will return the maximum number of strings the encoded string could represent (for example, "123" could represent "ABC", "LC", or "AW").  
+
+
+Combinatorial problems
+
+
+Lists of questions
+* https://facebook.interviewstreet.com/recruit/challenges
+* http://www.shutupandship.com/2012/02/how-hash-collisions-are-resolved-in.html
+* Career cup
+* http://programmers.stackexchange.com/questions/27518/if-you-could-ask-one-technical-interview-question-what-would-it-be
+* Using any language you want (even pseudocode), write a program or subroutine that prints the numbers from 1 to 100, each number on a line, except for every third number write "fizz", for every fifth number write "buzz", and if a number is divisible by both 3 and 5 write "fizzbuzz".
+
+

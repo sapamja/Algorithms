@@ -238,6 +238,39 @@ class Tree:
 				else:
 					node.set_value(maxnode.get_value())
 					self.remove_node(maxnode)
+
+	def tree_height(self,node):
+		# Height of a free is height of its highest tree + 1
+		if node == None:
+			return 0
+		else:
+			return 1 + max(self.tree_height(node.get_left()),self.tree_height(node.get_right()))
+
+
+	def lowest_common_ancestor(self,node,node1,node2):
+		# lowest common ancestor is always between node1 and node 2 values
+		# if node1 and node2 > current node, go right
+		# if node1 and node2 < current node, go left
+		# First one encountered is the lowest common node
+		# Lets assime n1 < n2
+		if node == None:
+			print "Tree is empty"
+			return None
+		elif node.get_value() > node1 and node.get_value() < node2:
+			return node.get_value()
+		
+		elif node.get_value() == node1:
+			return node1
+		
+		elif node.get_value() == node2:
+			return node2
+
+		elif node.get_value() < node1 and node.get_value() < node2:
+			return self.lowest_common_ancestor(node.get_right(),node1,node2)
+		
+		elif node.get_value() > node1 and node.get_value() > node2:
+			return self.lowest_common_ancestor(node.get_left(),node1,node2)
+	
 		
 
 # ---------------------------------------
@@ -281,6 +314,68 @@ def traversal_postorder(node):
 		if (node.get_right() != None):
 			traversal_postorder(node.get_right())
 		print node.get_value()
+
+
+def preorder_without_recursion(node):
+	# For preorder I will use stack 
+	print "Traverse preorder without recursion"
+	stack = []
+	if node == None:
+		print "Tree is empty" 
+		return None
+	else:
+		current = node
+		while current != None or len(stack) > 0:
+			if current != None:
+				print current.get_value()
+				stack.append(current.get_right())
+				current = current.get_left()
+			else:
+				current = stack.pop()
+
+
+
+def inorder_without_recursion(node):
+	print "Traverse inorder without recursion"
+	stack = []
+	if node == None:
+		print "Tree is empty"
+		return None
+	else:
+		current = node
+		while current != None or len(stack) > 0:
+			if current != None:
+				stack.append(current.get_right())
+				stack.append(current)
+				current = current.get_left()
+			else: 
+				print stack.pop().get_value()
+				current = stack.pop()
+
+# This function is not finished!!!!
+# Can't figure out how to do it
+def postorder_without_recursion(node):
+	print "Traverse postorder without recursion"
+	stack = []
+	if node == None:
+		print "Tree is empty"
+		return None
+	else:
+		current = node
+		while current != None or len(stack) > 0:
+			if current != None:
+				stack.append(current)
+				stack.append(current.get_right())
+				stack.append(current.get_left())
+				
+			else: 
+				current = stack.pop()
+				if current == None:
+					print stack.pop().get_value()
+					current = stack.pop()
+
+	
+
 
 # --------------------------
 # Functions for testing tree codes!
@@ -340,6 +435,7 @@ t5 = build_tree([5,4,3,2])
 t6 = build_tree([5,10,15,20])
 t7 = build_tree([5,3,20,1,4,10,25])
 t8 = build_tree([10,5,8,7,9])
+t9 = build_tree([100,50, 150,25,75,125,175,110])
 
 test_tree(t1)
 test_tree(t2)
@@ -351,7 +447,12 @@ test_tree(t7)
 test_tree(t8)
 
 traversal_inorder(t7[0].root)
+t = t9[0]
+plot_tree(t.root)
+print "height",t.tree_height(t.root)
 
-
-
+inorder_without_recursion(t.root)
+preorder_without_recursion(t.root)
+#postorder_without_recursion(t.root)
+print "ancestor",t.lowest_common_ancestor(t.root,110,125)
 

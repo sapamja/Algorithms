@@ -35,19 +35,23 @@ class Heap:
 			else:
 				i += 1
 
+	# This algorithm does not work! Not sure why....
+	# Don't know how to improve it
 	def dfs(self,i,item):
 		print i,self.heap[i]
 		if self.heap[i] == item:
-			print "here"
+			print "here is",i
 			return i
 		else:
+			children = []
 			if 2*i+1 < len(self.heap):
-				print "here left",i,2*i+1
-				return self.dfs(2*i+1,item)
-		
+				children.append(2*i+1)
 			if 2*i+2 < len(self.heap):
-				print "here right",i,2*i+2
-				return self.dfs(2*i+2,item)
+				children.append(2*i+2)
+
+			for c in children:
+				print "here",c
+				self.dfs(c,item)
 
 	def __str__(self):
 		return str(self.heap)
